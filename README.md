@@ -1,4 +1,4 @@
-## zabbix-template
+![zabbix demo](https://github.com/vqiu/zabbix-template/blob/master/Huawei-9303/demo.jpg)
 
 - Huawei-9303 目录
 
