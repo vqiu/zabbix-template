@@ -4,7 +4,7 @@
 
  &emsp;&emsp; 为 zabbix-3 系列为`华为交换机 9303` 制作的模块文件，该模版文件中对应关系为：
  
-|:  NO :|       Interface Name      |   Download  Key   |    Upload Key     |           Upload OID        |     Download OID         |
+|  NO   |       Interface Name      |   Download  Key   |    Upload Key     |           Upload OID        |     Download OID         |
 |:-----:| ------------------------- | ----------------- | ----------------- | --------------------------- | ------------------------ |
 |	1	|	GigabitEthernet3/0/0	|	ifInOctets.7	|	ifOutOctets.7	|	.1.3.6.1.2.1.2.2.1.10.7	  |	.1.3.6.1.2.1.2.2.1.16.7	 |
 |	2	|	GigabitEthernet3/0/1	|	ifInOctets.8	|	ifOutOctets.8	|	.1.3.6.1.2.1.2.2.1.10.8	  |	.1.3.6.1.2.1.2.2.1.16.8	 |
