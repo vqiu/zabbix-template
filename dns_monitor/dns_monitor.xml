@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.0</version>
+    <date>2016-05-13T05:32:57Z</date>
+    <groups>
+        <group>
+            <name>dns_monitor</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>dns_monitor</template>
+            <name>DNS 监控自动发现模版</name>
+            <description># 判断条件及输出数据：&#13;
+# 2ddos.com 有2个或以上 --&gt; 解析到我们平台，并且解析正常 --&gt; 输出 0&#13;
+# 2ddos.com 只有1个 --&gt; dns.com 出错 --&gt; 输出 1&#13;
+# no A record 或者 not found --&gt; 用户没有解析这个域名 --&gt; 输出 2&#13;
+# connection timed out; no servers could be reached --&gt; 用户 DNS 出错 --&gt; 输出 3&#13;
+# 不含有 2ddos.com --&gt; 用户没有解析到我们平台 --&gt; 输出 4&#13;
+# 其他情况 --&gt; 未知错误 --&gt; 输出 9</description>
+            <groups>
+                <group>
+                    <name>dns_monitor</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>dns_monitor</name>
+                </application>
+            </applications>
+            <items/>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>dns_monitor.discovery[test]</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>dns.monitor.discovery[https://down.vqiu.cn/api/dns_monitor_api.txt]</key>
+                    <delay>60</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>30</lifetime>
+                    <description># 判断条件及输出数据：&#13;
+# 2ddos.com 有2个或以上 --&gt; 解析到我们平台，并且解析正常 --&gt; 输出 0&#13;
+# 2ddos.com 只有1个 --&gt; dns.com 出错 --&gt; 输出 1&#13;
+# no A record 或者 not found --&gt; 用户没有解析这个域名 --&gt; 输出 2&#13;
+# connection timed out; no servers could be reached --&gt; 用户 DNS 出错 --&gt; 输出 3&#13;
+# 不含有 2ddos.com --&gt; 用户没有解析到我们平台 --&gt; 输出 4&#13;
+# 其他情况 --&gt; 未知错误 --&gt; 输出 9</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>DNS data status {#NAME}</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>dns.monitor[{#DOMAIN}]</key>
+                            <delay>60</delay>
+                            <history>30</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>DNS 监控数据获取 item</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>dns_monitor</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes/>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>DNS Monitor Graph on {#NAME}</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>dns_monitor</host>
+                                        <key>dns.monitor[{#DOMAIN}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <host_prototypes/>
+                </discovery_rule>
+            </discovery_rules>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+</zabbix_export>
